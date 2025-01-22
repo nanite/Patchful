@@ -32,11 +32,11 @@ repositories {
 }
 
 base {
-    archivesName = mod_id
+    archivesName = mod_id + "-" + project.minecraft_version
 }
 
-// Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+// Mojang ships Java 17 to end users from 1.18 to 1.20.4, so your mod should target Java 17.
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 neoForge {
     // Specify the version of NeoForge to use.
@@ -144,10 +144,10 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    implementation "curse.maven:patchouli-306770:5683901"
-    implementation "curse.maven:emojiful-284324:5614609"
-    runtimeOnly "curse.maven:modern-industrialization-405388:6097606"
-    runtimeOnly "curse.maven:cloth-config-348521:5729127"
+    implementation "curse.maven:patchouli-306770:5240286"
+    implementation "curse.maven:emojiful-284324:5153773"
+    runtimeOnly "curse.maven:modern-industrialization-405388:5562419"
+    runtimeOnly "curse.maven:cloth-config-348521:5729139"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
