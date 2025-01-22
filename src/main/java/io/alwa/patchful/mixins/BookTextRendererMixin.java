@@ -4,7 +4,6 @@ import com.hrznstudio.emojiful.ClientEmojiHandler;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
