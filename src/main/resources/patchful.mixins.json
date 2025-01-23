@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "io.alwa.patchful.mixins",
-  "refmap": "${mod_id}.refmap.json",
+  "refmap": "patchful.mixins.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "client": [
     "GuiBookMixin",
