@@ -20,7 +20,7 @@ public class GuiBookMixin {
     public void patchfulInit(Minecraft minecraft, int width, int height, CallbackInfo ci) {
         var screenClass = (Screen)(Object)this;
         if (screenClass instanceof GuiBook) {
-            this.font = ClientEmojiHandler.oldFontRenderer;
+            this.font = ClientEmojiHandler.oldFontRenderer == null ? font : ClientEmojiHandler.oldFontRenderer;
         }
     }
 }

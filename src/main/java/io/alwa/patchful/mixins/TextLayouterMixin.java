@@ -12,6 +12,6 @@ public class TextLayouterMixin {
 
     @ModifyVariable(method = "Lvazkii/patchouli/client/book/text/TextLayouter;layout(Lnet/minecraft/client/gui/Font;Ljava/util/List;)V", at = @At("HEAD"), ordinal = 0, argsOnly = true)
     private Font patchfulFont(Font font) {
-        return ClientEmojiHandler.oldFontRenderer;
+        return ClientEmojiHandler.oldFontRenderer == null ? font : ClientEmojiHandler.oldFontRenderer;
     }
 }

@@ -15,6 +15,6 @@ public class BookTextRendererMixin {
 
     @Inject(method = "render(Lnet/minecraft/client/gui/GuiGraphics;IIF)V", at = @At(value = "INVOKE_ASSIGN", target = "Lvazkii/patchouli/common/book/Book;getFontStyle()Lnet/minecraft/network/chat/Style;"))
     void patchfulRender(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks, CallbackInfo ci, @Local Font font) {
-        font = ClientEmojiHandler.oldFontRenderer;
+        font = ClientEmojiHandler.oldFontRenderer == null ? font : ClientEmojiHandler.oldFontRenderer;
     }
 }
