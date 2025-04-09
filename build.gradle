@@ -48,7 +48,7 @@ neoForge {
     }
 
     // This line is optional. Access Transformers are automatically detected
-    // accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
+     accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
@@ -145,7 +145,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     implementation "curse.maven:patchouli-306770:5683901"
-    implementation "curse.maven:emojiful-284324:5614609"
+    implementation "curse.maven:emojiful-284324:6388599"
     runtimeOnly "curse.maven:modern-industrialization-405388:6097606"
     runtimeOnly "curse.maven:cloth-config-348521:5729127"
 }

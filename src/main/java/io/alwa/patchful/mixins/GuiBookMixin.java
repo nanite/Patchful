@@ -1,6 +1,6 @@
 package io.alwa.patchful.mixins;
 
-import com.hrznstudio.emojiful.ClientEmojiHandler;
+import io.alwa.patchful.Patchful;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.Screen;
@@ -20,7 +20,7 @@ public class GuiBookMixin {
     public void patchfulInit(Minecraft minecraft, int width, int height, CallbackInfo ci) {
         var screenClass = (Screen)(Object)this;
         if (screenClass instanceof GuiBook) {
-            this.font = ClientEmojiHandler.oldFontRenderer == null ? font : ClientEmojiHandler.oldFontRenderer;
+            this.font = Patchful.patchfulFont;
         }
     }
 }
