@@ -2,8 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "io.alwa.patchful.mixins",
-  "refmap": "${mod_id}.refmap.json",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_25",
   "client": [
     "BookTextRendererMixin",
     "GuiBookMixin",

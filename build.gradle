@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'net.neoforged.moddev' version '2.0.75'
+    id 'net.neoforged.moddev' version '2.0.148'
     id 'idea'
 }
 
@@ -35,17 +35,11 @@ base {
     archivesName = mod_id + "-" + project.minecraft_version
 }
 
-// Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
     // Specify the version of NeoForge to use.
     version = project.neo_version
-
-    parchment {
-        mappingsVersion = project.parchment_mappings_version
-        minecraftVersion = project.parchment_minecraft_version
-    }
 
     // This line is optional. Access Transformers are automatically detected
      accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
@@ -75,7 +69,7 @@ neoForge {
         }
 
         data {
-            data()
+            clientData()
 
             // example of overriding the workingDirectory set in configureEach above, uncomment if you want to use it
             // gameDirectory = project.file('run-data')
@@ -144,10 +138,10 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    implementation "curse.maven:patchouli-306770:5683901"
-    implementation "curse.maven:emojiful-284324:6388599"
-    runtimeOnly "curse.maven:modern-industrialization-405388:6097606"
-    runtimeOnly "curse.maven:cloth-config-348521:5729127"
+    implementation "curse.maven:patchouli-306770:${patchouli_file}"
+    implementation "curse.maven:emojiful-284324:${emojiful_file}"
+
+    localRuntime "curse.maven:mffs-238546:${mffs_file}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
